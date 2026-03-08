@@ -41,7 +41,7 @@ const Index = () => {
         <p className="text-muted-foreground text-lg mb-10 max-w-lg mx-auto">
           Join the teams shipping faster with AI-generated test coverage.
         </p>
-        <button className="px-10 py-4 rounded-md bg-primary text-primary-foreground font-semibold text-lg hover:bg-primary/90 transition-all glow-red-intense">
+        <button onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })} className="px-10 py-4 rounded-md bg-primary text-primary-foreground font-semibold text-lg hover:bg-primary/90 transition-all glow-red-intense">
           Get Started Free
         </button>
       </section>
