@@ -1,7 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, Copy, Check, GitCommit, ExternalLink } from "lucide-react";
-import { useState } from "react";
+import { ArrowLeft, GitCommit, ExternalLink } from "lucide-react";
 import CodeViewer from "@/components/CodeViewer";
 import Navbar from "@/components/Navbar";
 
