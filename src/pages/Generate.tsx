@@ -9,6 +9,7 @@ const Generate = () => {
   const [repoUrl, setRepoUrl] = useState("");
   const [baseCommit, setBaseCommit] = useState("");
   const [headCommit, setHeadCommit] = useState("");
+  const [framework, setFramework] = useState("DVV-One");
   const [isGenerating, setIsGenerating] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
