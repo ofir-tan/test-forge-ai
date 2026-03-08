@@ -35,32 +35,14 @@ const Results = () => {
               Back to form
             </button>
 
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-              <div>
-                <h1 className="text-3xl md:text-4xl font-bold mb-2">
-                  Tests Generated{" "}
-                  <span className="text-primary">✓</span>
-                </h1>
-                <p className="text-muted-foreground">
-                  Your AI-generated test suite is ready to review.
-                </p>
-              </div>
-              <button
-                onClick={handleCopy}
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md border border-border bg-secondary text-foreground text-sm font-medium hover:bg-secondary/80 transition-colors shrink-0"
-              >
-                {copied ? (
-                  <>
-                    <Check className="w-4 h-4 text-primary" />
-                    Copied
-                  </>
-                ) : (
-                  <>
-                    <Copy className="w-4 h-4" />
-                    Copy Code
-                  </>
-                )}
-              </button>
+            <div>
+              <h1 className="text-3xl md:text-4xl font-bold mb-2">
+                Tests Generated{" "}
+                <span className="text-primary">✓</span>
+              </h1>
+              <p className="text-muted-foreground">
+                Your AI-generated test suite is ready to review.
+              </p>
             </div>
           </motion.div>
 
