@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { GitBranch, ArrowRight, Loader2 } from "lucide-react";
+import { GitBranch, ArrowRight, Loader2, ChevronDown } from "lucide-react";
 import Navbar from "@/components/Navbar";
 
 const Generate = () => {
