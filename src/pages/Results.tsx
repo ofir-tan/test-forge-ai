@@ -21,7 +21,11 @@ const Results = () => {
 
   const handleSubmitFeedback = () => {
     if (!rating && !feedback.trim()) return;
-    // Placeholder — would send to backend
+
+    // TODO: Replace with real API call when backend is ready:
+    // import { submitFeedback } from "@/lib/api";
+    // await submitFeedback({ generationId: state.id, rating, comment: feedback });
+
     setFeedbackSent(true);
   };
 

@@ -33,7 +33,13 @@ const Generate = () => {
   const handleGenerate = async () => {
     if (!validate()) return;
     setIsGenerating(true);
-    // Simulate AI generation delay
+
+    // TODO: Replace with real API call when backend is ready:
+    // import { generateTests } from "@/lib/api";
+    // const result = await generateTests({ repoUrl, baseCommit, headCommit, framework });
+    // navigate(`/results/${result.id}`);
+
+    // Simulated delay for now
     await new Promise((r) => setTimeout(r, 2500));
     navigate("/results", {
       state: {
