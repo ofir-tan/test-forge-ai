@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Copy, Check } from "lucide-react";
 
 const pythonCode = `import pytest
 from app.services.auth import AuthService
