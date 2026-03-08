@@ -21,7 +21,7 @@ const Navbar = () => {
         <div className="flex items-center gap-6">
           <a href="#how-it-works" className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block">How It Works</a>
           <a href="#benefits" className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block">Benefits</a>
-          <button onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })} className="px-4 py-2 text-sm font-medium rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors">
+          <button onClick={() => navigate('/generate')} className="px-4 py-2 text-sm font-medium rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors">
             Get Started
           </button>
         </div>

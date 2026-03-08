@@ -46,7 +46,7 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <button onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })} className="px-8 py-3.5 rounded-md bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all glow-red-intense">
+          <button onClick={() => navigate('/generate')} className="px-8 py-3.5 rounded-md bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all glow-red-intense">
             Start Generating Tests
           </button>
           <button onClick={() => document.getElementById('live-preview')?.scrollIntoView({ behavior: 'smooth' })} className="px-8 py-3.5 rounded-md border border-border text-foreground font-semibold hover:bg-secondary transition-colors">
