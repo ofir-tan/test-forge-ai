@@ -76,6 +76,14 @@ type Tab = "python" | "xml";
 
 const CodeViewer = () => {
   const [activeTab, setActiveTab] = useState<Tab>("python");
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    const code = activeTab === "python" ? pythonCode : xmlCode;
+    await navigator.clipboard.writeText(code);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
     <motion.div
