@@ -1,8 +1,18 @@
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const scrollToSection = (id: string) => {
+    if (location.pathname === "/") {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.location.href = `/#${id}`;
+    }
+  };
+
   return (
     <motion.nav
       initial={{ opacity: 0, y: -10 }}
@@ -22,8 +32,12 @@ const Navbar = () => {
           <button onClick={() => navigate('/dashboard')} className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block bg-transparent border-none cursor-pointer">
             History
           </button>
-          <a href="/#how-it-works" className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block">How It Works</a>
-          <a href="/#benefits" className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block">Benefits</a>
+          <button onClick={() => scrollToSection("how-it-works")} className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block bg-transparent border-none cursor-pointer">
+            How It Works
+          </button>
+          <button onClick={() => scrollToSection("benefits")} className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block bg-transparent border-none cursor-pointer">
+            Benefits
+          </button>
           <button onClick={() => navigate('/generate')} className="px-4 py-2 text-sm font-medium rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors">
             Get Started
           </button>
