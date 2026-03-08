@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import HowItWorks from "@/components/HowItWorks";
@@ -6,6 +7,7 @@ import Benefits from "@/components/Benefits";
 import Footer from "@/components/Footer";
 
 const Index = () => {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -41,7 +43,7 @@ const Index = () => {
         <p className="text-muted-foreground text-lg mb-10 max-w-lg mx-auto">
           Join the teams shipping faster with AI-generated test coverage.
         </p>
-        <button onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })} className="px-10 py-4 rounded-md bg-primary text-primary-foreground font-semibold text-lg hover:bg-primary/90 transition-all glow-red-intense">
+        <button onClick={() => navigate('/generate')} className="px-10 py-4 rounded-md bg-primary text-primary-foreground font-semibold text-lg hover:bg-primary/90 transition-all glow-red-intense">
           Get Started Free
         </button>
       </section>
