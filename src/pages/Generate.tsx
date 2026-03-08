@@ -40,6 +40,7 @@ const Generate = () => {
         repoUrl: repoUrl.trim(),
         baseCommit: baseCommit.trim(),
         headCommit: headCommit.trim(),
+        framework,
       },
     });
   };
