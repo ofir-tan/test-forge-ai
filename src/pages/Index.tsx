@@ -7,6 +7,7 @@ import Benefits from "@/components/Benefits";
 import Footer from "@/components/Footer";
 
 const Index = () => {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
