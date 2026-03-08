@@ -20,7 +20,7 @@ const Navbar = () => {
         </div>
         <div className="flex items-center gap-6">
           <button onClick={() => navigate('/dashboard')} className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block bg-transparent border-none cursor-pointer">
-            My Tests
+            History
           </button>
           <a href="/#how-it-works" className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block">How It Works</a>
           <a href="/#benefits" className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block">Benefits</a>
