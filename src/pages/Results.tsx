@@ -14,31 +14,6 @@ const Results = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const state = location.state as LocationState | null;
-  const [copied, setCopied] = useState(false);
-
-  if (!state) {
-    return (
-      <div className="min-h-screen bg-background">
-        <Navbar />
-        <div className="pt-24 pb-20 px-6 text-center">
-          <p className="text-muted-foreground mb-4">No results to display.</p>
-          <button
-            onClick={() => navigate("/generate")}
-            className="px-6 py-3 rounded-md bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors"
-          >
-            Generate Tests
-          </button>
-        </div>
-      </div>
-    );
-  }
-
-  const handleCopy = async () => {
-    // Copy the python code placeholder
-    await navigator.clipboard.writeText("# Generated test code — see viewer below");
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
 
   return (
     <div className="min-h-screen bg-background">
