@@ -1,7 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, Copy, Check, GitCommit, ExternalLink } from "lucide-react";
-import { useState } from "react";
+import { ArrowLeft, GitCommit, ExternalLink } from "lucide-react";
 import CodeViewer from "@/components/CodeViewer";
 import Navbar from "@/components/Navbar";
 
@@ -15,31 +14,6 @@ const Results = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const state = location.state as LocationState | null;
-  const [copied, setCopied] = useState(false);
-
-  if (!state) {
-    return (
-      <div className="min-h-screen bg-background">
-        <Navbar />
-        <div className="pt-24 pb-20 px-6 text-center">
-          <p className="text-muted-foreground mb-4">No results to display.</p>
-          <button
-            onClick={() => navigate("/generate")}
-            className="px-6 py-3 rounded-md bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors"
-          >
-            Generate Tests
-          </button>
-        </div>
-      </div>
-    );
-  }
-
-  const handleCopy = async () => {
-    // Copy the python code placeholder
-    await navigator.clipboard.writeText("# Generated test code — see viewer below");
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -61,32 +35,14 @@ const Results = () => {
               Back to form
             </button>
 
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-              <div>
-                <h1 className="text-3xl md:text-4xl font-bold mb-2">
-                  Tests Generated{" "}
-                  <span className="text-primary">✓</span>
-                </h1>
-                <p className="text-muted-foreground">
-                  Your AI-generated test suite is ready to review.
-                </p>
-              </div>
-              <button
-                onClick={handleCopy}
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md border border-border bg-secondary text-foreground text-sm font-medium hover:bg-secondary/80 transition-colors shrink-0"
-              >
-                {copied ? (
-                  <>
-                    <Check className="w-4 h-4 text-primary" />
-                    Copied
-                  </>
-                ) : (
-                  <>
-                    <Copy className="w-4 h-4" />
-                    Copy Code
-                  </>
-                )}
-              </button>
+            <div>
+              <h1 className="text-3xl md:text-4xl font-bold mb-2">
+                Tests Generated{" "}
+                <span className="text-primary">✓</span>
+              </h1>
+              <p className="text-muted-foreground">
+                Your AI-generated test suite is ready to review.
+              </p>
             </div>
           </motion.div>
 

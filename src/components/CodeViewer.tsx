@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Copy, Check } from "lucide-react";
 
 const pythonCode = `import pytest
 from app.services.auth import AuthService
@@ -75,6 +76,14 @@ type Tab = "python" | "xml";
 
 const CodeViewer = () => {
   const [activeTab, setActiveTab] = useState<Tab>("python");
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    const code = activeTab === "python" ? pythonCode : xmlCode;
+    await navigator.clipboard.writeText(code);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
     <motion.div
@@ -119,9 +128,25 @@ const CodeViewer = () => {
               />
             )}
           </button>
-          <div className="ml-auto pr-4 flex items-center gap-2">
+          <div className="ml-auto pr-4 flex items-center gap-3">
+            <button
+              onClick={handleCopy}
+              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded border border-border bg-secondary/50 text-xs font-mono text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
+            >
+              {copied ? (
+                <>
+                  <Check className="w-3 h-3 text-primary" />
+                  Copied
+                </>
+              ) : (
+                <>
+                  <Copy className="w-3 h-3" />
+                  Copy
+                </>
+              )}
+            </button>
             <span className="h-3 w-3 rounded-full bg-primary/40 animate-pulse-glow" />
-            <span className="text-xs text-muted-foreground font-mono">AI Generated</span>
+            <span className="text-xs text-muted-foreground font-mono hidden sm:inline">AI Generated</span>
           </div>
         </div>
 
