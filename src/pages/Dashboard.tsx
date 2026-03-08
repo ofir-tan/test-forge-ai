@@ -80,6 +80,10 @@ function repoName(url: string) {
 const Dashboard = () => {
   const navigate = useNavigate();
 
+  // TODO: Replace dummyRuns with real API call when backend is ready:
+  // import { getTestHistory } from "@/lib/api";
+  // const [runs, setRuns] = useState<TestRun[]>([]);
+  // useEffect(() => { getTestHistory().then(setRuns); }, []);
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
