@@ -19,8 +19,11 @@ const Navbar = () => {
           <span className="text-primary font-mono text-sm font-medium ml-0.5">AI</span>
         </div>
         <div className="flex items-center gap-6">
-          <a href="#how-it-works" className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block">How It Works</a>
-          <a href="#benefits" className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block">Benefits</a>
+          <button onClick={() => navigate('/dashboard')} className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block bg-transparent border-none cursor-pointer">
+            My Tests
+          </button>
+          <a href="/#how-it-works" className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block">How It Works</a>
+          <a href="/#benefits" className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block">Benefits</a>
           <button onClick={() => navigate('/generate')} className="px-4 py-2 text-sm font-medium rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors">
             Get Started
           </button>
