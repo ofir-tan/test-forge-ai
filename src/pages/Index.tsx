@@ -16,7 +16,7 @@ const Index = () => {
       </section>
 
       {/* Demo code viewer */}
-      <section className="py-20 px-6 border-t border-border">
+      <section id="live-preview" className="py-20 px-6 border-t border-border">
         <div className="max-w-5xl mx-auto text-center mb-14">
           <span className="font-mono text-sm text-primary tracking-widest uppercase">Live Preview</span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-4">
