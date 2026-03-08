@@ -16,7 +16,7 @@ const Index = () => {
       </section>
 
       {/* Demo code viewer */}
-      <section className="py-20 px-6 border-t border-border">
+      <section id="live-preview" className="py-20 px-6 border-t border-border">
         <div className="max-w-5xl mx-auto text-center mb-14">
           <span className="font-mono text-sm text-primary tracking-widest uppercase">Live Preview</span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-4">
@@ -41,7 +41,7 @@ const Index = () => {
         <p className="text-muted-foreground text-lg mb-10 max-w-lg mx-auto">
           Join the teams shipping faster with AI-generated test coverage.
         </p>
-        <button className="px-10 py-4 rounded-md bg-primary text-primary-foreground font-semibold text-lg hover:bg-primary/90 transition-all glow-red-intense">
+        <button onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })} className="px-10 py-4 rounded-md bg-primary text-primary-foreground font-semibold text-lg hover:bg-primary/90 transition-all glow-red-intense">
           Get Started Free
         </button>
       </section>
