@@ -125,6 +125,28 @@ const Generate = () => {
               </div>
             </div>
 
+            {/* Test Framework */}
+            <div className="space-y-2">
+              <label className="text-sm font-medium text-foreground">
+                Test Framework
+              </label>
+              <div className="relative">
+                <select
+                  value={framework}
+                  onChange={(e) => setFramework(e.target.value)}
+                  className="w-full h-11 px-4 pr-10 rounded-md border border-input bg-background text-foreground font-mono text-sm focus:outline-none focus:ring-2 focus:ring-ring transition-colors appearance-none"
+                >
+                  <option value="DVV-One">DVV-One</option>
+                  <option value="pytest">pytest</option>
+                  <option value="JUnit">JUnit</option>
+                  <option value="Mocha">Mocha</option>
+                  <option value="Jest">Jest</option>
+                  <option value="RSpec">RSpec</option>
+                </select>
+                <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground pointer-events-none" />
+              </div>
+            </div>
+
             {/* Divider */}
             <div className="border-t border-border" />
 
